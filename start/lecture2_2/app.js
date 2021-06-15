@@ -6,13 +6,13 @@ class App{
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
     
-        this.camera = new THREE.PerspectiveCamera(60, window.innerWidth,window.innerHeight,0.1,100);
-		this.camera.position.set(0,0,4);
+        this.camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100 );
+		this.camera.position.set( 0, 0, 4 );
 
 		this.scene = new THREE.Scene();
-		this.scene.background = new THREE.Color(0xaaaaaa);
+		this.scene.background = new THREE.Color( 0xaaaaaa );
 
-		const ambient = new THREE.HemisphereLight(0xffffff,0xbbbbff,0.3);
+		const ambient = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 0.3);
 		this.scene.add(ambient);
 
 		const light = new THREE.DirectionalLight();
