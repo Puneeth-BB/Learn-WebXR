@@ -51,7 +51,7 @@ class App{
 
         const geometry = new THREE.ExtrudeGeometry(shape,extrudeSettings);
 
-        const material = new THREE.MeshStandardMaterial( { color: 0xFF0000 });
+        const material = new THREE.MeshBasicMaterial( { color: 0xFF0000 });
 
         this.mesh = new THREE.Mesh( geometry, material );
         
