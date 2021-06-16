@@ -46,7 +46,7 @@ class App{
         const extrudeSettings = {
             steps:1,
             depth:1,
-            bevelEnable = false
+            bevelEnable : false
         }
 
         const geometry = new THREE.ExtrudeGeometry(shape,extrudeSettings);
