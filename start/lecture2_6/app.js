@@ -62,6 +62,24 @@ class App{
     
     loadGLTF(){
         const self = this;
+        const loader = new GLTFLoader().setPath('../../assets/');
+
+        loader.load(
+            'office-chair.glb',
+            function(gltf){
+                self.chair = gltf.scene;
+                self.scene.add(gltf.scene);
+                self.loadingBar.visible = false;
+                self.renderer.setAnimationLoop(self.render.bind(self));
+            },
+            function(xhr){
+                self.loadingBar.progress = xhr.loaded / xhr.total;
+            },
+            function(err){
+                console.log('An error happened');
+
+            }
+            )
     }
     
     loadFBX(){
